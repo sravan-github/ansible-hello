@@ -1,0 +1,30 @@
+pipeline {
+  agent {
+    docker { image 'ubuntu:latest' }
+   }
+    stages {
+      stage('Test') {
+       steps {
+          sh 'cat /etc/lsb-release'
+       }
+      }
+     stage('build') {
+       steps {
+          sh 'cat /etc/lsb-release'
+       }
+      }
+     }
+    }
+================================================================
+pipeline {
+  agent {
+    docker { image 'ibmcom/ansible-lifecycle-driver:3.3.0' }
+   }
+    stages {
+      stage('Test') {
+       steps {
+          sh 'ansible --version'
+       }
+      }
+     }
+    }
